@@ -1,7 +1,7 @@
 // filepath: /workspaces/ICP-Bootcamp-Advanced-Frontend/src/frontend/src/App.tsx
 import { useEffect, useMemo, useState } from "react";import { createActor, canisterId } from "../../declarations/backend.js";
 import "@nfid/identitykit/react/styles.css";
-import { IdentityKitProvider, IdentityKitTheme } from "@nfid/identitykit/react";
+import { ConnectWallet, IdentityKitProvider, IdentityKitTheme } from "@nfid/identitykit/react";
 import { IdentityKitAuthType } from "@nfid/identitykit";
 import YourApp from "./components/YourApp.js";
 import { canisterId as targetIdlFactory } from "../../declarations/backend.js";
@@ -30,13 +30,14 @@ function App() {
       }}
     >
       <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-
+      <div className="absolute top-1 right-1 ">
+      <ConnectWallet />
+      </div>
         <img src="/logo2.svg" alt="DFINITY logo" className="mb-6" />
         <h1 className="mt-6 text-3xl font-bold underline text-center">
           Hello world in Tailwind!
         </h1>
         <form
-          action="#"
           onSubmit={handleSubmit}
           className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
         >
@@ -63,7 +64,6 @@ function App() {
           {greeting}
         </section>
       </main>
-      <YourApp />
     </IdentityKitProvider>
   );
 }
