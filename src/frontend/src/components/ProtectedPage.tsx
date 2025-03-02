@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useIdentityKit } from "@nfid/identitykit/react";
+import { getUserId } from "../../../declarations/backend.js";
+
 
 const ProtectedPage: React.FC = () => {
   const { user } = useIdentityKit();
@@ -40,11 +42,11 @@ const ProtectedPage: React.FC = () => {
               {user.principal.toString()}
             </span>
           </p>
-          {/* <p className="text-white/90">
+          <p className="text-white/90">
             <span className="font-semibold">Account ID:</span>
             <br />
-            <span className="font-mono text-sm">{user.subaccount.toString()}</span>
-          </p> */}
+            <span className="font-mono text-sm">{getUserId(user.principal.toString())}</span>
+          </p> 
         </div>
       </div>
     </div>
