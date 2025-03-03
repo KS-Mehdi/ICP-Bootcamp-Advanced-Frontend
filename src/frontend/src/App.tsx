@@ -40,22 +40,22 @@ const App: React.FC = () => {
               <Route
                 path="/"
                 element={
-                  <div className="flex flex-col items-center justify-center min-h-screen p-8">
+                  <div className="flex flex-col items-center justify-center min-h-screen p-4 sm:p-8">
                     <img
                       src="/logo2.svg"
                       alt="DFINITY logo"
-                      className="mb-8 h-24"
+                      className="mb-6 sm:mb-8 h-20 sm:h-24"
                     />
-                    <h1 className="mt-8 text-4xl font-bold underline text-center text-white mb-12">
+                    <h1 className="mt-6 sm:mt-8 text-3xl sm:text-4xl font-bold underline text-center text-white mb-8 sm:mb-12">
                       Hello world in Tailwind!
                     </h1>
                     <form
                       onSubmit={handleSubmit}
-                      className="bg-white/10 backdrop-blur-lg p-10 rounded-xl shadow-xl w-full max-w-xl border border-white/20"
+                      className="bg-white/10 backdrop-blur-lg p-6 sm:p-10 rounded-xl shadow-xl w-full max-w-lg sm:max-w-xl border border-white/20"
                     >
                       <label
                         htmlFor="name"
-                        className="block text-2xl font-semibold mb-4 text-white"
+                        className="block text-xl sm:text-2xl font-semibold mb-4 text-white"
                       >
                         Enter your name:
                       </label>
@@ -63,18 +63,18 @@ const App: React.FC = () => {
                         id="name"
                         alt="Name"
                         type="text"
-                        className="w-full border border-white/30 rounded-lg py-3 px-4 mb-6 focus:outline-none focus:ring-2 focus:ring-white/50 bg-white/10 text-white backdrop-blur-lg text-lg"
+                        className="w-full border border-white/30 rounded-lg py-2 sm:py-3 px-3 sm:px-4 mb-4 sm:mb-6 focus:outline-none focus:ring-2 focus:ring-white/50 bg-white/10 text-white backdrop-blur-lg text-md sm:text-lg"
                       />
                       <button
                         type="submit"
-                        className="w-full bg-white/20 hover:bg-white/30 text-white font-bold py-3 px-6 rounded-lg text-lg transition duration-300"
+                        className="w-full bg-white/20 hover:bg-white/30 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg text-md sm:text-lg transition duration-300"
                       >
                         Click Me!
                       </button>
                     </form>
                     <section
                       id="greeting"
-                      className="mt-8 p-6 bg-white/10 backdrop-blur-lg rounded-xl shadow-xl text-center w-full max-w-xl text-white border border-white/20 text-xl"
+                      className="mt-6 sm:mt-8 p-4 sm:p-6 bg-white/10 backdrop-blur-lg rounded-xl shadow-xl text-center w-full max-w-lg sm:max-w-xl text-white border border-white/20 text-lg sm:text-xl"
                     >
                       {greeting}
                     </section>
