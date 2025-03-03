@@ -1,20 +1,12 @@
 import { IDL, query, update } from "azle";
+import sharedService from "../declarations/sharedService.js";
 
 export default class {
   message: string = "Hello,";
-  private nextId: number = 0;
-  private userIdMap: Map<string, number> = new Map();
 
   @query([IDL.Principal], IDL.Nat)
   public getUserId(userPrincipal: string): number {
-    if (this.userIdMap.has(userPrincipal)) {
-      return this.userIdMap.get(userPrincipal)!;
-    } else {
-      const newId = this.nextId;
-      this.userIdMap.set(userPrincipal, newId);
-      this.nextId += 1;
-      return newId;
-    }
+    return sharedService.getUserId(userPrincipal);
   }
 
   @query([IDL.Text], IDL.Text)

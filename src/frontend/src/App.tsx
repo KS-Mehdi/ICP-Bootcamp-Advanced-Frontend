@@ -30,10 +30,8 @@ const App: React.FC = () => {
     >
       <Router>
         <div className="flex flex-col min-h-screen relative overflow-hidden">
-          {/* Arrière-plan statique */}
           <div className="fixed inset-0 bg-gradient-to-r from-purple-400 via-blue-500 to-orange-500 z-0"></div>
 
-          {/* Contenu avec fond transparent */}
           <div className="relative z-10 flex-grow">
             <Header />
             <Routes>

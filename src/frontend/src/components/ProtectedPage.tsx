@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useIdentityKit } from "@nfid/identitykit/react";
-import { getUserId } from "../../../declarations/backend.js";
-
+import sharedService from "../../../declarations/sharedService.js";
 
 const ProtectedPage: React.FC = () => {
   const { user } = useIdentityKit();
@@ -45,8 +44,10 @@ const ProtectedPage: React.FC = () => {
           <p className="text-white/90">
             <span className="font-semibold">Account ID:</span>
             <br />
-            <span className="font-mono text-sm">{getUserId(user.principal.toString())}</span>
-          </p> 
+            <span className="font-mono text-sm">
+              {sharedService.getUserId(user.principal.toString())}
+            </span>
+          </p>
         </div>
       </div>
     </div>
